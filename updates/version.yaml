@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Updated table jumplink_downloads_files'
+    - builder_table_update_jumplink_downloads_files.php
+1.0.3:
+    - 'Updated table jumplink_downloads_files'
+    - builder_table_update_jumplink_downloads_files_2.php
+<<<<<<< HEAD
+1.0.4:
+    - 'Updated table jumplink_downloads_files'
+    - builder_table_update_jumplink_downloads_files_3.php
+=======
+>>>>>>> 6c567ed90af728671040d31b5a0bd6023fd6b10f

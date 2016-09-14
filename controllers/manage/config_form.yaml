@@ -1,0 +1,10 @@
+name: Manage
+form: $/jumplink/downloads/models/file/fields.yaml
+modelClass: JumpLink\Downloads\Models\File
+defaultRedirect: jumplink/downloads/manage
+create:
+    redirect: 'jumplink/downloads/manage/update/:id'
+    redirectClose: jumplink/downloads/manage
+update:
+    redirect: jumplink/downloads/manage
+    redirectClose: jumplink/downloads/manage

@@ -1,0 +1,20 @@
+fields:
+    file_name:
+        label: 'jumplink.downloads::lang.file.name'
+        span: auto
+        required: 1
+        type: text
+<<<<<<< HEAD
+    file:
+=======
+    file_path:
+>>>>>>> 6c567ed90af728671040d31b5a0bd6023fd6b10f
+        label: 'jumplink.downloads::lang.file.path'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        required: 1
+        type: fileupload

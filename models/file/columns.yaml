@@ -1,0 +1,4 @@
+columns:
+    file_name:
+        label: 'jumplink.downloads::lang.file.name'
+        type: text
