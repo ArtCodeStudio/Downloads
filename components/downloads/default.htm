@@ -1,6 +1,6 @@
 {% for download in __SELF__.downloads %}
  	<a href="{{ download.file.path }}">{{ download.file_name }}</a>
-	 <br>
+	<br>
 {% endfor %}
 <a href="{{ downloadAll(__SELF__.downloads) }}">Download all</a>
 
