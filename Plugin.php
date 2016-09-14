@@ -32,55 +32,43 @@ class Plugin extends PluginBase
         ];
     }
 
-    /*
-        thats the structure of one file :
-        {
-        "id": 3,
-        "file_name": "Document 1",
-        "file": {
-            "id": 19,
-            "disk_name": "57d92e82d465e121854714.pdf",
-            "file_name": "Dummy PDF 2.pdf",
-            "file_size": 123061,
-            "content_type": "application\/pdf",
-            "title": null,
-            "description": null,
-            "field": "file",
-            "sort_order": 19,
-            "created_at": "2016-09-14 11:03:30",
-            "updated_at": "2016-09-14 11:03:33",
-            "path": "\/storage\/app\/uploads\/public\/57d\/92e\/82d\/57d92e82d465e121854714.pdf",
-            "extension": "pdf"
-        }
-        }
-    */
+
+    /**
+     * Registers custom twig functions
+     *
+     * @return array
+     */
     public function registerMarkupTags()
     {
         return [
 
             'functions' => [
-                'downloadAll' => function($downloads) { 
+                'downloadAll' => function ( $downloads ) { 
                     
                     $root = $_SERVER['DOCUMENT_ROOT'];
                     $public_path = 'storage/temp/public/';
-
                     $server_zip_path =  temp_path() . '/public/bundle.zip';
-                    if(file_exists($server_zip_path )){
+
+                    // check if file exists and deelte it
+                    if ( file_exists($server_zip_path) ) {
                         unlink( $server_zip_path );
                     }
 
+                    // Initalize new ZIP File
                     $zip = new \ZipArchive;
-                    $zip->open( $server_zip_path, \ZipArchive::CREATE);
+                    $zip->open( $server_zip_path, \ZipArchive::CREATE );
               
-                    foreach ($downloads as $download) {
+                    // add Files to the above created ZIP
+                    foreach ( $downloads as $download ) {
                         $server_file_path = $root . $download->file->getPath();
                         $new_filename = $download->file_name . '.' . $download->file->extension; 
                         $zip->addFile( $server_file_path, $new_filename);
                     }  
 
-                  
-                   $zip->close();    
-                   echo  $public_path .'bundle.zip';
+                    $zip->close();    
+
+                    // return the public path 
+                    echo  $public_path .'bundle.zip';
                 }
             ]
         ];

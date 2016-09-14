@@ -41,7 +41,6 @@ class Downloads extends ComponentBase
 
     public function onRun()
     {
-        $this->page['var'] = 'value';
         $this->downloads = FileModel::all();
     }
 }
