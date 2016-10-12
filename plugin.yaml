@@ -8,11 +8,7 @@ navigation:
     main-menu-item.downloads:
         label: 'jumplink.downloads::lang.main-menu-items.downloads'
         url: jumplink/downloads/manage
-<<<<<<< HEAD
         icon: icon-download
-=======
-        icon: icon-life-ring
->>>>>>> 6c567ed90af728671040d31b5a0bd6023fd6b10f
         sideMenu:
             side-menu-item.manage:
                 label: 'jumplink.downloads::lang.side-menu-item.manage'
